@@ -1,73 +1,228 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/Assetimages/HMBB02.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/Assetimages/HMBB03.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="Reserach on the sigle-objective optimization and artificial neural network.                           PAPER1       Title: Design of RBF neural network based on SAPSO algorithm.Auth">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" integrity="sha256-jTIdiMuX/e3DGJUGwl3pKSxuc6YOuqtJYkM0bGQESA4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"banmaeach.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.10.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Reserach on the sigle-objective optimization and artificial neural network.PAPER1Title: Design of RBF neural network based on SAPSO algorithm.Authors: W. Zhang and W. M. HuangPublisher: Control and De">
 <meta property="og:type" content="website">
 <meta property="og:title" content="PublishPapers">
 <meta property="og:url" content="http://banmaeach.github.io/papers/index.html">
 <meta property="og:site_name" content="BanmaEach&#39;s Blogs">
-<meta property="og:description" content="Reserach on the sigle-objective optimization and artificial neural network.                           PAPER1       Title: Design of RBF neural network based on SAPSO algorithm.Auth">
+<meta property="og:description" content="Reserach on the sigle-objective optimization and artificial neural network.PAPER1Title: Design of RBF neural network based on SAPSO algorithm.Authors: W. Zhang and W. M. HuangPublisher: Control and De">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-03-17T07:45:14.000Z">
 <meta property="article:modified_time" content="2022-03-17T10:15:12.367Z">
 <meta property="article:author" content="BanmaEach">
-<meta name="twitter:card" content="summary"><title>PublishPapers | BanmaEach's Blogs</title><link ref="canonical" href="http://banmaeach.github.io/papers/index.html"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
-var CONFIG = {
-  root: '/',
-  algolia: undefined,
-  assistSearch: undefined,
-  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
-  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
-  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
-  postWidget: {"endText":true},
-  nightMode: undefined,
-  back2top: {"enable":true},
-  codeblock: {"style":"default","highlight":"light","wordWrap":false},
-  reward: false,
-  fancybox: false,
-  zoomImage: {"gapAside":"20px"},
-  galleryWaterfall: undefined,
-  lazyload: false,
-  pjax: undefined,
-  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
-  shortcuts: undefined,
-  prompt: {"copyButton":"Copy","copySuccess":"Copy Success","copyError":"Copy Error"},
-  sourcePath: {"js":"js","css":"css","images":"images"},
-};
+<meta name="twitter:card" content="summary">
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.1.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__text">Archives</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__text">Categories</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__text">Tags</span></a></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">BanmaEach's Blogs</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><div class="custompage">
-        <h1 id="Reserach-on-the-sigle-objective-optimization-and-artificial-neural-network">
-          <a href="#Reserach-on-the-sigle-objective-optimization-and-artificial-neural-network" class="heading-link"><i class="fas fa-link"></i></a><a href="#Reserach-on-the-sigle-objective-optimization-and-artificial-neural-network" class="headerlink" title="Reserach on the sigle-objective optimization and artificial neural network."></a>Reserach on the sigle-objective optimization and artificial neural network.</h1>
+
+<link rel="canonical" href="http://banmaeach.github.io/papers/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"en","comments":"","permalink":"http://banmaeach.github.io/papers/index.html","path":"papers/index.html","title":"PublishPapers"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>PublishPapers | BanmaEach's Blogs
+</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">BanmaEach's Blogs</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Reserach-on-the-sigle-objective-optimization-and-artificial-neural-network"><span class="nav-number">1.</span> <span class="nav-text">Reserach on the sigle-objective optimization and artificial neural network.</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PAPER1"><span class="nav-number">1.1.</span> <span class="nav-text">PAPER1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PAPER2"><span class="nav-number">1.2.</span> <span class="nav-text">PAPER2</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reserach-on-the-multi-objective-optimization-based-on-partical-swarm-opimization-algorithm"><span class="nav-number">2.</span> <span class="nav-text">Reserach on the multi-objective optimization based on partical swarm opimization algorithm.</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PAPER3"><span class="nav-number">2.1.</span> <span class="nav-text">PAPER3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PAPER4"><span class="nav-number">2.2.</span> <span class="nav-text">PAPER4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PAPER5"><span class="nav-number">2.3.</span> <span class="nav-text">PAPER5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PAPER6"><span class="nav-number">2.4.</span> <span class="nav-text">PAPER6</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">BanmaEach</p>
+  <div class="site-description" itemprop="description">Gradually Lose Enthusiasm</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner page posts-expand">
+
+
+    
+    
+    
+    <div class="post-block" lang="en"><header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">PublishPapers
+</h1>
+
+<div class="post-meta-container">
+</div>
+
+</header>
+
       
-        <h2 id="PAPER1">
-          <a href="#PAPER1" class="heading-link"><i class="fas fa-link"></i></a><a href="#PAPER1" class="headerlink" title="PAPER1"></a>PAPER1</h2>
-      <p>Title: Design of RBF neural network based on SAPSO algorithm.<br>Authors: W. Zhang and W. M. Huang<br>Publisher: <em>Control and Decison</em><br>DOI: 10.13195&#x2F;j.kzyjc.2020.0176<br><strong>Abstract:</strong> Aiming at the dynamic optimization of structure and parameters of the radial basis function (RBF) neural<br>network, an optimization algorithm based on sensitivity analysis (SA) and particle swarm optimization (PSO) for the RBF neural network (SAPSO-RBF) is proposed. Firstly, the number of particle information is randomly initialized, and the particle information is added and deleted by the sensitivity analysis in the learning phase, and the network structure of the algorithm in first convergence is determined. Then, after the algorithm reaches convergence, we analyzes the sensitivity of the optimal particles, deletes the redundant information, and makes the algorithm re-divergent. An inertia weight update method is proposed to make the algorithm perform multiple divergence and convergence in the solution space, which enhances algorithm search ability while reducing network structure, and the convergence of SAPSO algorithm is proved. Finally, the results of experiments show that the proposed SAPSO-RBF algorithm has good self-organizing ability and has greatly improved the network structure compactness and accuracy compared with some other existing methods.</p>
-
-        <h2 id="PAPER2">
-          <a href="#PAPER2" class="heading-link"><i class="fas fa-link"></i></a><a href="#PAPER2" class="headerlink" title="PAPER2"></a>PAPER2</h2>
-      <p>Title: Fault diagnosis of wind power gearbox based on IPSO-FNN.<br>Authors: W. Zhang, W. M. Huang, R. F. Bai, and D. H. Rui<br>Publisher: <em>Chinese Automation Congress</em><br>DOI:<br><strong>Abstract:</strong> Wind power gearbox (WPG) is an important component of wind turbines, which is prone to faults due to factors such as working environment and complex structure. Furthermore, the causality of faults is difficult to be expressed by the mathematical model. A fault diagnosis method of WPG is proposed based on the improved particle swarm optimization combined with fuzzy neural network (IPSO-FNN). In order to improve the efficiency of network learning algorithm, IPSO is used to learn network parameters. Fitness variance is introduced to characterize the state of particles, and differential evolution is applied to premature particles to improve the diversity of particle swarm. Simulation results show that the proposed method has higher diagnostic accuracy and faster convergence speed than FNN and PSO-FNN methods.</p>
-
-        <h1 id="Reserach-on-the-multi-objective-optimization-based-on-partical-swarm-opimization-algorithm">
-          <a href="#Reserach-on-the-multi-objective-optimization-based-on-partical-swarm-opimization-algorithm" class="heading-link"><i class="fas fa-link"></i></a><a href="#Reserach-on-the-multi-objective-optimization-based-on-partical-swarm-opimization-algorithm" class="headerlink" title="Reserach on the multi-objective optimization based on partical swarm opimization algorithm."></a>Reserach on the multi-objective optimization based on partical swarm opimization algorithm.</h1>
       
-        <h2 id="PAPER3">
-          <a href="#PAPER3" class="heading-link"><i class="fas fa-link"></i></a><a href="#PAPER3" class="headerlink" title="PAPER3"></a>PAPER3</h2>
-      <p>Title: Multi-strategy Adaptive Multi-objective Particle Swarm Optimization Algorithm Based on Swarm Partition<br>Authors: W. Zhang and W. M. Huang<br>Publisher: <em>ACTA AUTOMATICA SINICA</em><br>DOI:<br><strong>Abstract:</strong> In the multi-objective particle swarm optimization(MOPSO) algorithm, balancing the convergence and diversity of the algorithm is the key to obtain the Pareto front with good distribution and accuracy. Most of the proposed methods rely on only one strategy to guide the particle search, and the algorithm may lack convergence and diversity when solving complex problems. To solve this problem, a multi-strategy adaptive multi-objective particle swarm optimization based on swarm partition(spmsAMOPSO) is proposed. Firstly, the algorithm detects environment by the convergence contribution of particles and adjusts the process of particle exploration and exploitation adaptively. Secondly, in order to accurately formulate the search strategy of particles with different performances, a multi-strategy global optimal particle selection method and mutation method are proposed. According to the evaluation index of the convergence of the particles, the population is divided into three regions. Combining particle performance with the algorithm optimization process can improve the search efficiency of each particle. Thirdly, an individual optimal particle selection scheme with memory interval is proposed to solve the problem that the algorithm falls into local optimization because the selected individual optimal particles cannot guide the flight direction of particles effectively. That can improve the reliability of individual optimal particle selection, and accelerate the process of paricle convergence. Finally, the fusion metric including particle convergence and diversity is used to maintain the external archive. It can avoid deleting the particles with good convergence and resulting in population degradation and affecting particle development capabilities, when external archive maintenance just based on the particle density. Experimental results show that the proposed algorithm has good performance compared with some other multi-objective optimization algorithms.</p>
+      <div class="post-body">
+          <h1 id="Reserach-on-the-sigle-objective-optimization-and-artificial-neural-network"><a href="#Reserach-on-the-sigle-objective-optimization-and-artificial-neural-network" class="headerlink" title="Reserach on the sigle-objective optimization and artificial neural network."></a>Reserach on the sigle-objective optimization and artificial neural network.</h1><h2 id="PAPER1"><a href="#PAPER1" class="headerlink" title="PAPER1"></a>PAPER1</h2><p>Title: Design of RBF neural network based on SAPSO algorithm.<br>Authors: W. Zhang and W. M. Huang<br>Publisher: <em>Control and Decison</em><br>DOI: 10.13195&#x2F;j.kzyjc.2020.0176<br><strong>Abstract:</strong> Aiming at the dynamic optimization of structure and parameters of the radial basis function (RBF) neural<br>network, an optimization algorithm based on sensitivity analysis (SA) and particle swarm optimization (PSO) for the RBF neural network (SAPSO-RBF) is proposed. Firstly, the number of particle information is randomly initialized, and the particle information is added and deleted by the sensitivity analysis in the learning phase, and the network structure of the algorithm in first convergence is determined. Then, after the algorithm reaches convergence, we analyzes the sensitivity of the optimal particles, deletes the redundant information, and makes the algorithm re-divergent. An inertia weight update method is proposed to make the algorithm perform multiple divergence and convergence in the solution space, which enhances algorithm search ability while reducing network structure, and the convergence of SAPSO algorithm is proved. Finally, the results of experiments show that the proposed SAPSO-RBF algorithm has good self-organizing ability and has greatly improved the network structure compactness and accuracy compared with some other existing methods.</p>
+<h2 id="PAPER2"><a href="#PAPER2" class="headerlink" title="PAPER2"></a>PAPER2</h2><p>Title: Fault diagnosis of wind power gearbox based on IPSO-FNN.<br>Authors: W. Zhang, W. M. Huang, R. F. Bai, and D. H. Rui<br>Publisher: <em>Chinese Automation Congress</em><br>DOI:<br><strong>Abstract:</strong> Wind power gearbox (WPG) is an important component of wind turbines, which is prone to faults due to factors such as working environment and complex structure. Furthermore, the causality of faults is difficult to be expressed by the mathematical model. A fault diagnosis method of WPG is proposed based on the improved particle swarm optimization combined with fuzzy neural network (IPSO-FNN). In order to improve the efficiency of network learning algorithm, IPSO is used to learn network parameters. Fitness variance is introduced to characterize the state of particles, and differential evolution is applied to premature particles to improve the diversity of particle swarm. Simulation results show that the proposed method has higher diagnostic accuracy and faster convergence speed than FNN and PSO-FNN methods.</p>
+<h1 id="Reserach-on-the-multi-objective-optimization-based-on-partical-swarm-opimization-algorithm"><a href="#Reserach-on-the-multi-objective-optimization-based-on-partical-swarm-opimization-algorithm" class="headerlink" title="Reserach on the multi-objective optimization based on partical swarm opimization algorithm."></a>Reserach on the multi-objective optimization based on partical swarm opimization algorithm.</h1><h2 id="PAPER3"><a href="#PAPER3" class="headerlink" title="PAPER3"></a>PAPER3</h2><p>Title: Multi-strategy Adaptive Multi-objective Particle Swarm Optimization Algorithm Based on Swarm Partition<br>Authors: W. Zhang and W. M. Huang<br>Publisher: <em>ACTA AUTOMATICA SINICA</em><br>DOI:<br><strong>Abstract:</strong> In the multi-objective particle swarm optimization(MOPSO) algorithm, balancing the convergence and diversity of the algorithm is the key to obtain the Pareto front with good distribution and accuracy. Most of the proposed methods rely on only one strategy to guide the particle search, and the algorithm may lack convergence and diversity when solving complex problems. To solve this problem, a multi-strategy adaptive multi-objective particle swarm optimization based on swarm partition(spmsAMOPSO) is proposed. Firstly, the algorithm detects environment by the convergence contribution of particles and adjusts the process of particle exploration and exploitation adaptively. Secondly, in order to accurately formulate the search strategy of particles with different performances, a multi-strategy global optimal particle selection method and mutation method are proposed. According to the evaluation index of the convergence of the particles, the population is divided into three regions. Combining particle performance with the algorithm optimization process can improve the search efficiency of each particle. Thirdly, an individual optimal particle selection scheme with memory interval is proposed to solve the problem that the algorithm falls into local optimization because the selected individual optimal particles cannot guide the flight direction of particles effectively. That can improve the reliability of individual optimal particle selection, and accelerate the process of paricle convergence. Finally, the fusion metric including particle convergence and diversity is used to maintain the external archive. It can avoid deleting the particles with good convergence and resulting in population degradation and affecting particle development capabilities, when external archive maintenance just based on the particle density. Experimental results show that the proposed algorithm has good performance compared with some other multi-objective optimization algorithms.</p>
+<h2 id="PAPER4"><a href="#PAPER4" class="headerlink" title="PAPER4"></a>PAPER4</h2><p>Title: Adaptive multi-objective particle swarm optimization with multi-strategy based on energy conversion and explosive mutation<br>Authors: W. M. Huang and W. Zhang<br>Publisher: <em>Applied Soft Computing</em><br>DOI: 10.1016&#x2F;j.asoc.2021.107937<br><strong>Abstract:</strong> Convergence and diversity are crucial in designing a multi-objective optimization algorithm, which are related to whether an accurate and well-distributed Pareto front can be obtained. Although the multi-objective particle swarm optimization (MOPSO) has achieved successful development, there are still some innovative and desirable schemes to further improve its performance. An adaptive MOPSO with multi-strategy based on energy conversion and explosive mutation (ecemAMOPSO) is proposed for solving multi-objective optimization problems. Dissipative energy of particles, defined from the perspective of force analysis and energy conversion, can be used as the feedback information to detect the evolutionary environment and formulate an adaptive strategy. The population is divided into three classes and the particles in different classes are optimized by the customized strategies. A novel mechanism inspired by the explosion of fireworks is proposed to design a multi-strategy mutation operator. Moreover, the particles is equipped with memory interval to select the personal best, and fusion index is formed to maintain the external archive. Experimental studies are conducted on ZDT, DTLZ, and WFG benchmark suits and several state of the art algorithms are employed as competitors. Experimental results show that the proposed algorithm is highly competitive in multi-aspect.</p>
+<h2 id="PAPER5"><a href="#PAPER5" class="headerlink" title="PAPER5"></a>PAPER5</h2><p>Title: Adaptive multi-objective particle swarm optimization using three-stage strategy with decomposition<br>Authors: W. M. Huang and W. Zhang<br>Publisher: <em>Soft Computing</em><br>DOI: 10.1007&#x2F;s00500-021-06262-7<br><strong>Abstract:</strong> Balancing the convergence and the diversity is one of the crucial researches in solving multi-objective problems (MOPs). However, the optimization algorithms are inefficient and require massive iterations. The convergence accuracy and the distribution of the obtained non-dominated solutions are defective in solving complex MOPs. To solve these problems, a novel adaptive multi-objective particle swarm optimization using a three-stage strategy (tssAMOPSO) is proposed in this paper. Firstly, an adaptive flight parameter adjustment is proposed to manage the states of the algorithm, switching between the global exploration and the local exploitation. Then, the three-stage strategy, including adaptive optimization, decomposition, and Gaussian attenuation mutation, is conducted by population in each iteration. The three-stage strategy remarkably promotes the diversity and efficiency of the optimization process. Furthermore, the convergence analysis of three-stage strategy is provided in detail. Finally, particles are equipped with memory interval to improve the reliability of personal best selection. In the maintenance of external archive, the proposed fusion index can enhance the quality of nondominated solutions directly. A series of benchmark instances, ZDT and DTLZ test suits, are used to verify the performance of tssAMOPSO. Several classical and state-of-the-art algorithms are employed for experimental comparisons. Experimental results show that tssAMOPSO outperforms the other algorithms and achieves admirable comprehensive performance.</p>
+<h2 id="PAPER6"><a href="#PAPER6" class="headerlink" title="PAPER6"></a>PAPER6</h2><p>Title: Multi-objective optimization based on an adaptive competitive swarm optimizer<br>Authors: W. M. Huang and W. Zhang<br>Publisher: <em>Information Sciences</em><br>DOI: 10.1016&#x2F;j.ins.2021.11.031<br><strong>Abstract:</strong> Following two decades of sustained studies, metaheuristic algorithms have made considerable<br>achievements in the field of multi-objective optimization problems (MOPs). However, under most existing metaheuristic frameworks, an improved scheme introduced to address specific defects usually leads to additional problems that need to be solved further. Emerging optimization mechanisms should be considered to break the bottleneck, and an adaptive multi-objective competitive swarm optimization (AMOCSO) algorithm, a promising option for solving MOPs, is proposed in this paper. Firstly, the competitive mechanism is modified so that it can perform well on MOPs, and an improved learning scheme is designed for the winners and the losers, which can greatly enhance the optimization efficiency and balance the convergence and the diversity of the proposed algorithm. Then, an external archive and its maintenance schemes are introduced to prevent the population from degenerating and make the algorithm framework more comprehensive. Moreover, a practical adaptive strategy is proposed to fill the blank of parameter research, and no human factors exist in AMOCSO, which means that an amazing promotion can be achieved in generalization. Finally, abundant experimental studies are carried out, and the results of comparative experiments show that the proposed algorithm has significant advantages over several state-of-the-art algorithms.</p>
 
-        <h2 id="PAPER4">
-          <a href="#PAPER4" class="heading-link"><i class="fas fa-link"></i></a><a href="#PAPER4" class="headerlink" title="PAPER4"></a>PAPER4</h2>
-      <p>Title: Adaptive multi-objective particle swarm optimization with multi-strategy based on energy conversion and explosive mutation<br>Authors: W. M. Huang and W. Zhang<br>Publisher: <em>Applied Soft Computing</em><br>DOI: 10.1016&#x2F;j.asoc.2021.107937<br><strong>Abstract:</strong> Convergence and diversity are crucial in designing a multi-objective optimization algorithm, which are related to whether an accurate and well-distributed Pareto front can be obtained. Although the multi-objective particle swarm optimization (MOPSO) has achieved successful development, there are still some innovative and desirable schemes to further improve its performance. An adaptive MOPSO with multi-strategy based on energy conversion and explosive mutation (ecemAMOPSO) is proposed for solving multi-objective optimization problems. Dissipative energy of particles, defined from the perspective of force analysis and energy conversion, can be used as the feedback information to detect the evolutionary environment and formulate an adaptive strategy. The population is divided into three classes and the particles in different classes are optimized by the customized strategies. A novel mechanism inspired by the explosion of fireworks is proposed to design a multi-strategy mutation operator. Moreover, the particles is equipped with memory interval to select the personal best, and fusion index is formed to maintain the external archive. Experimental studies are conducted on ZDT, DTLZ, and WFG benchmark suits and several state of the art algorithms are employed as competitors. Experimental results show that the proposed algorithm is highly competitive in multi-aspect.</p>
+      </div>
+      
+      
+      
+    </div>
 
-        <h2 id="PAPER5">
-          <a href="#PAPER5" class="heading-link"><i class="fas fa-link"></i></a><a href="#PAPER5" class="headerlink" title="PAPER5"></a>PAPER5</h2>
-      <p>Title: Adaptive multi-objective particle swarm optimization using three-stage strategy with decomposition<br>Authors: W. M. Huang and W. Zhang<br>Publisher: <em>Soft Computing</em><br>DOI: 10.1007&#x2F;s00500-021-06262-7<br><strong>Abstract:</strong> Balancing the convergence and the diversity is one of the crucial researches in solving multi-objective problems (MOPs). However, the optimization algorithms are inefficient and require massive iterations. The convergence accuracy and the distribution of the obtained non-dominated solutions are defective in solving complex MOPs. To solve these problems, a novel adaptive multi-objective particle swarm optimization using a three-stage strategy (tssAMOPSO) is proposed in this paper. Firstly, an adaptive flight parameter adjustment is proposed to manage the states of the algorithm, switching between the global exploration and the local exploitation. Then, the three-stage strategy, including adaptive optimization, decomposition, and Gaussian attenuation mutation, is conducted by population in each iteration. The three-stage strategy remarkably promotes the diversity and efficiency of the optimization process. Furthermore, the convergence analysis of three-stage strategy is provided in detail. Finally, particles are equipped with memory interval to improve the reliability of personal best selection. In the maintenance of external archive, the proposed fusion index can enhance the quality of nondominated solutions directly. A series of benchmark instances, ZDT and DTLZ test suits, are used to verify the performance of tssAMOPSO. Several classical and state-of-the-art algorithms are employed for experimental comparisons. Experimental results show that tssAMOPSO outperforms the other algorithms and achieves admirable comprehensive performance.</p>
+    
+    
 
-        <h2 id="PAPER6">
-          <a href="#PAPER6" class="heading-link"><i class="fas fa-link"></i></a><a href="#PAPER6" class="headerlink" title="PAPER6"></a>PAPER6</h2>
-      <p>Title: Multi-objective optimization based on an adaptive competitive swarm optimizer<br>Authors: W. M. Huang and W. Zhang<br>Publisher: <em>Information Sciences</em><br>DOI: 10.1016&#x2F;j.ins.2021.11.031<br><strong>Abstract:</strong> Following two decades of sustained studies, metaheuristic algorithms have made considerable<br>achievements in the field of multi-objective optimization problems (MOPs). However, under most existing metaheuristic frameworks, an improved scheme introduced to address specific defects usually leads to additional problems that need to be solved further. Emerging optimization mechanisms should be considered to break the bottleneck, and an adaptive multi-objective competitive swarm optimization (AMOCSO) algorithm, a promising option for solving MOPs, is proposed in this paper. Firstly, the competitive mechanism is modified so that it can perform well on MOPs, and an improved learning scheme is designed for the winners and the losers, which can greatly enhance the optimization efficiency and balance the convergence and the diversity of the proposed algorithm. Then, an external archive and its maintenance schemes are introduced to prevent the population from degenerating and make the algorithm framework more comprehensive. Moreover, a practical adaptive strategy is proposed to fill the blank of parameter research, and no human factors exist in AMOCSO, which means that an amazing promotion can be achieved in generalization. Finally, abundant experimental studies are carried out, and the results of comparative experiments show that the proposed algorithm has significant advantages over several state-of-the-art algorithms.</p>
-</div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Reserach-on-the-sigle-objective-optimization-and-artificial-neural-network"><span class="toc-number">1.</span> <span class="toc-text">
-          Reserach on the sigle-objective optimization and artificial neural network.</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#PAPER1"><span class="toc-number">1.1.</span> <span class="toc-text">
-          PAPER1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PAPER2"><span class="toc-number">1.2.</span> <span class="toc-text">
-          PAPER2</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reserach-on-the-multi-objective-optimization-based-on-partical-swarm-opimization-algorithm"><span class="toc-number">2.</span> <span class="toc-text">
-          Reserach on the multi-objective optimization based on partical swarm opimization algorithm.</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#PAPER3"><span class="toc-number">2.1.</span> <span class="toc-text">
-          PAPER3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PAPER4"><span class="toc-number">2.2.</span> <span class="toc-text">
-          PAPER4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PAPER5"><span class="toc-number">2.3.</span> <span class="toc-text">
-          PAPER5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PAPER6"><span class="toc-number">2.4.</span> <span class="toc-text">
-          PAPER6</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/Assetimages/HWM001.gif" alt="avatar"></div><p class="sidebar-ov-author__text">Gradually Lose the Enthusiasm</p></div><div class="sidebar-ov-social"></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">1</div><div class="sidebar-ov-state-item__name">Archives</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">0</div><div class="sidebar-ov-state-item__name">Categories</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">0</div><div class="sidebar-ov-state-item__name">Tags</div></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>BanmaEach</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-arrow-up"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">BanmaEach</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
